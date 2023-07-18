@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
-import { check, PERMISSIONS, PermissionStatus, request } from 'react-native-permissions'
+/* import { check, PERMISSIONS, PermissionStatus, request } from 'react-native-permissions' */
 import { PermissionsContext } from '../context/PermissionsContext'
+import { BlackButton } from '../components/BlackButton';
 
 export const PermissionsScreen = () => {
 
   const { permissions, askLocationPermission } = useContext(PermissionsContext);
   return (
     <View style={styles.container}>
-      <Text>Permissions Screen</Text>
-      <Button
+      <Text style={styles.title}>Permissions Screen</Text>
+      <BlackButton
         title='Permiso'
         onPress={askLocationPermission}
       />
@@ -26,8 +27,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  title:{
+    width:250,
+    fontSize:24,
+    fontWeight: 'bold',
+    color:'black',
+    textAlign: 'center',
+  },
   text: {
-    fontSize: 24,
+    fontSize: 18,
+    fontWeight: '500',
     color: 'black'
-  }
+  },
 });

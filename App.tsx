@@ -6,7 +6,7 @@ import  Icon  from 'react-native-vector-icons/Ionicons';
 import { PermissionsProvider } from './src/context/PermissionsContext';
 
 
-const AppState = ({children}: any)=>{
+const AppState = ({children}:any)=>{
 
   return(
     <PermissionsProvider>
@@ -18,7 +18,9 @@ const AppState = ({children}: any)=>{
 const App = () => {
   return (
     <NavigationContainer>
-      <Navigator/>
+      <AppState>
+        <Navigator/>
+      </AppState>
     </NavigationContainer>
   )
 }
